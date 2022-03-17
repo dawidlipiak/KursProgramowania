@@ -3,7 +3,7 @@
 #include <iostream>
 #include <stdlib.h>
 #include <string.h>
-#include <LiczbyPierwsze.cpp>
+#include "LiczbyPierwsze.cpp"
 
 
 int main (int argc, char *argv[])

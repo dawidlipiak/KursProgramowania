@@ -91,13 +91,13 @@ public class Test {
                     try{    
                         int bok1 = Integer.parseInt(args[licznik]);
                         licznik++;
-                        int bok2 = Integer.parseInt(args[licznik+1]);
+                        int bok2 = Integer.parseInt(args[licznik]);
                         licznik++;
-                        int bok3 = Integer.parseInt(args[licznik+2]);
+                        int bok3 = Integer.parseInt(args[licznik]);
                         licznik++;
-                        int bok4 = Integer.parseInt(args[licznik+3]);
+                        int bok4 = Integer.parseInt(args[licznik]);
                         licznik++;
-                        int kat = Integer.parseInt(args[licznik+4]);
+                        int kat = Integer.parseInt(args[licznik]);
                         licznik++;
 
                         if(kat > 90){

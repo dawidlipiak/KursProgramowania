@@ -43,7 +43,9 @@ public class Cell extends Rectangle implements Runnable{
 
         while (true){
             if(this.activityState == true) {
-                colorChange();
+                synchronize(this.gridPane){
+                    colorChange();
+                }
             }
             try{
                 Thread.sleep((int) (random.nextDouble(1.5*speedVariable - 0.5*speedVariable)+0.5*speedVariable));

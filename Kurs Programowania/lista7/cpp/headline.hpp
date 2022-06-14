@@ -2,7 +2,8 @@
 #include <stdio.h>
 #include <iostream>
 #include <stdlib.h>
-
+#include <string.h>
+//#define else  
 
 template <typename T>
 class TreeElement
@@ -32,40 +33,39 @@ class TreeElement
 };
 
 template <typename T>
-class Tree{
+class Tree {
     private:
         TreeElement<T> *root;
 
         TreeElement<T> *ins (T elem, TreeElement<T> *w) {
             if( w == NULL )
                 return new TreeElement<T>(elem);
-
-            if( elem.compare(w->element)<0 )
+            if(compareTo(elem, w->element)<0) {
                 w -> left = ins(elem, w -> left);
-
-            else if( elem.compare(w -> element)>0)
+            }
+            else if(compareTo(elem, w->element)>0) {
                 w -> right = ins(elem, w -> right);
-
+            }
             return w;
         }
 
-        bool search (T element, TreeElement<T> *w) {
+        bool search (T elem, TreeElement<T> *w) {
             if( w == NULL )
                 return false;
 
-            if( element.compare(w -> element) == 0 )
+            if( compareTo(elem, w -> element) == 0 )
                 return true;
 
-            if( element.compare(w -> element) < 0)
-                return search(element, w -> left);
+            if( compareTo(elem, w -> element) < 0)
+                return search(elem, w -> left);
 
             else
-                return search(element, w -> right);
+                return search(elem, w -> right);
         }
 
         std::string toS(TreeElement<T> *w ) { 
             if( w != NULL )
-                return "(" + w->element + ":"+toS(w->left)+ ":" + toS(w->right) + ")";
+                return "(" + w-> element + ":" + toS(w->left) + ":" + toS(w->right) + ")";
             
             return "()";
         }
@@ -75,10 +75,10 @@ class Tree{
             if (key == NULL)
                 return key;
 
-            if (elem.compare(key->element) < 0)
+            if (compareTo(elem,key->element) < 0)
                 key -> left = del(elem,key->left);
 
-            else if (elem.compare(key->element)>0)
+            else if (compareTo(elem,key->element)>0)
                 key->right = del(elem,key->right);
 
             else {
@@ -93,8 +93,15 @@ class Tree{
             }
             return key;
         }
-    
-    
+
+        int compareTo(T val1, T val2) {
+                if (val1 > val2) 
+                    return 1;
+                else if (val1 == val2)
+                    return 0;
+                return -1;
+        }
+         
     public:
         Tree(){
             root=NULL;
@@ -127,7 +134,7 @@ class Tree{
         }
 
         void draw(){
-            std::cout << this->toS(root) << std::endl; 
+            std::cout << this->toS(root) << std::endl << std::endl; 
         }
 
         void deleteNode(T elem)

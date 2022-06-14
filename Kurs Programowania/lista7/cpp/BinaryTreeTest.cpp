@@ -3,23 +3,35 @@
 using namespace std;
 
 int main(int argc, char *argv[]){
-    Tree <string> *tree = new Tree <string>();
+    
+    Tree<string> * const tree = new Tree<string>();
 
-    tree -> insert("Maciek");
-    tree -> insert("Ala");
-    tree -> insert("Kot");
-    tree -> insert("Maciek");
-    tree -> insert("Zbyszek");
+    string element;
+    string action;
 
-    cout<<"Sprawdzenie czy wystepuje Ala"<<endl;
-    cout << tree->search("Ala") << endl;
-
-    cout<<"Sprawdzenie czy wystepuje test"<<endl;
-    cout << tree->search("test") << endl;
-
-    tree->draw();
-    tree->deleteNode("Kot");
-    tree->draw();
+    while(action != "exit"){
+        cout<< "\nPodaj akcje ktora chcesz wykonac: \n";
+        cout<< "| 1. exit | 2. draw | 3. insert ... | 4. search ... | 5. delete |\n";
+        cin >> action; 
+        
+        if(action == "draw"){
+            tree -> draw();
+        }
+        else if(action == "insert"){
+            cin >> element;
+            //cout<<"ins test " << element << endl;
+            tree -> insert(element);
+        }
+        else if(action == "search"){
+            cin >> element;
+            cout<< tree -> search(element) << endl;
+        }
+        else if(action == "delete"){
+            cin >> element;
+                tree -> deleteNode(element);
+        }
+    }
 
     return 0;    
 }
+

@@ -52,8 +52,8 @@ public class Tree<T extends Comparable<T>> {
             return search(element, w.right);
     }
 
-    public void draw(){
-        System.out.println(this);
+    public Tree<T> draw(){
+        return this;
     }
 
     public void delete(T elem)
@@ -72,8 +72,7 @@ public class Tree<T extends Comparable<T>> {
         else if (elem.compareTo(key.element)>0)
             key.right = del(elem,key.right);
 
-        else
-        {
+        else {
             if (key.left == null)
                 return key.right;
 
@@ -83,6 +82,7 @@ public class Tree<T extends Comparable<T>> {
             key.element = minimal(key.right);
             key.right = del(key.element,key.right);
         }
+
         return key;
     }
     public T minimal( TreeElement<T> w)
@@ -94,6 +94,7 @@ public class Tree<T extends Comparable<T>> {
             val=w.left.element;
             w=w.left;
         }
+
         return val;
     }
 

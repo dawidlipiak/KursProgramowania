@@ -1,0 +1,97 @@
+\hypertarget{class_prostokat}{}\doxysection{Prostokat Class Reference}
+\label{class_prostokat}\index{Prostokat@{Prostokat}}
+Inheritance diagram for Prostokat\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_prostokat}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class {\bfseries Prostokat\+Event\+Handler}
+\item 
+class {\bfseries Prostokat\+Scroll\+Handler}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_prostokat_a5f1d824d0f81d32a7af761b3757b6be9}{Prostokat}} (Point2D p1, Point2D p2)
+\item 
+boolean \mbox{\hyperlink{class_prostokat_ad212153c6e6363b9d3353bbda1e721a7}{is\+Hit}} (double x, double y)
+\item 
+void \mbox{\hyperlink{class_prostokat_a4d459c5f2e118d5d702078e82f7d08c0}{addX}} (double x)
+\item 
+void \mbox{\hyperlink{class_prostokat_a5a8995d919fd4f890a2334fa38f6fce6}{addY}} (double y)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Klasa prostokąta 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_prostokat_a5f1d824d0f81d32a7af761b3757b6be9}\label{class_prostokat_a5f1d824d0f81d32a7af761b3757b6be9}} 
+\index{Prostokat@{Prostokat}!Prostokat@{Prostokat}}
+\index{Prostokat@{Prostokat}!Prostokat@{Prostokat}}
+\doxysubsubsection{\texorpdfstring{Prostokat()}{Prostokat()}}
+{\footnotesize\ttfamily Prostokat.\+Prostokat (\begin{DoxyParamCaption}\item[{Point2D}]{p1,  }\item[{Point2D}]{p2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Konstruktor prostokata 
+\begin{DoxyParams}{Parameters}
+{\em p1} & pierwszy wierzchołek prostokąta \\
+\hline
+{\em p2} & przeciwny do pierwszego wierzchołek \\
+\hline
+\end{DoxyParams}
+Wyznaczenie środka trójkąta służącego jako pivot do jego obrotu
+
+Ustawianie koloru figury wybranego z palety colorpickera
+
+Obsługa obrotu figury podczas użycia slidera
+
+Ustawienie wartości obrotu figury
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_prostokat_a4d459c5f2e118d5d702078e82f7d08c0}\label{class_prostokat_a4d459c5f2e118d5d702078e82f7d08c0}} 
+\index{Prostokat@{Prostokat}!addX@{addX}}
+\index{addX@{addX}!Prostokat@{Prostokat}}
+\doxysubsubsection{\texorpdfstring{addX()}{addX()}}
+{\footnotesize\ttfamily void Prostokat.\+addX (\begin{DoxyParamCaption}\item[{double}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Zmiana pozycji x prostokąta 
+\begin{DoxyParams}{Parameters}
+{\em x} & -\/ wartość o którą przesuwamy prostokąt w osi X \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_prostokat_a5a8995d919fd4f890a2334fa38f6fce6}\label{class_prostokat_a5a8995d919fd4f890a2334fa38f6fce6}} 
+\index{Prostokat@{Prostokat}!addY@{addY}}
+\index{addY@{addY}!Prostokat@{Prostokat}}
+\doxysubsubsection{\texorpdfstring{addY()}{addY()}}
+{\footnotesize\ttfamily void Prostokat.\+addY (\begin{DoxyParamCaption}\item[{double}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Zmiana pozycji y prostokąta 
+\begin{DoxyParams}{Parameters}
+{\em y} & -\/ wartość o którą przesuwamy prostokąt w osi Y \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_prostokat_ad212153c6e6363b9d3353bbda1e721a7}\label{class_prostokat_ad212153c6e6363b9d3353bbda1e721a7}} 
+\index{Prostokat@{Prostokat}!isHit@{isHit}}
+\index{isHit@{isHit}!Prostokat@{Prostokat}}
+\doxysubsubsection{\texorpdfstring{isHit()}{isHit()}}
+{\footnotesize\ttfamily boolean Prostokat.\+is\+Hit (\begin{DoxyParamCaption}\item[{double}]{x,  }\item[{double}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Funkcja sprawdza czy kursor najechal na figure 
+\begin{DoxyParams}{Parameters}
+{\em x} & -\/ pozycja x kursora \\
+\hline
+{\em y} & -\/ pozycja y kursora \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+-\/ zwraca prawdę lub fałsz zależnie czy x i y zawierają się w figurze 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Prostokat.\+java\end{DoxyCompactItemize}

@@ -1,13 +1,14 @@
 import java.io.*;
 import java.net.*;
 
-
+/**
+ * Server class
+ */
 public class MultiServerThread {
-
     public static void main(String[] args) {
 
+        //Creating a server on port 4444
         try (ServerSocket serverSocket = new ServerSocket(4444)) {
-
             System.out.println("Server is listening on port 4444");
 
             while (true) {

@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"<Unnamed>","l":"Okrag"},{"p":"<Unnamed>","l":"Paint"},{"p":"<Unnamed>","l":"PointPosition"},{"p":"<Unnamed>","l":"Prostokat"},{"p":"<Unnamed>","l":"Paint.ShapeInterface"},{"p":"<Unnamed>","l":"Paint.ShapeSelector"},{"p":"<Unnamed>","l":"Trojkat"}];updateSearchResults();

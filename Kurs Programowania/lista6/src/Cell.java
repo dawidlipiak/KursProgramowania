@@ -39,13 +39,12 @@ public class Cell extends Rectangle implements Runnable{
 
         setOnMouseClicked(new ThreadEventHandler());
     }
+
     public void run (){
 
         while (true){
             if(this.activityState == true) {
-                synchronize(this.gridPane){
-                    colorChange();
-                }
+                colorChange();
             }
             try{
                 Thread.sleep((int) (random.nextDouble(1.5*speedVariable - 0.5*speedVariable)+0.5*speedVariable));

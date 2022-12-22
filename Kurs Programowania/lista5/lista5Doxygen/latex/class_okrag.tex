@@ -1,0 +1,106 @@
+\hypertarget{class_okrag}{}\doxysection{Okrag Class Reference}
+\label{class_okrag}\index{Okrag@{Okrag}}
+Inheritance diagram for Okrag\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_okrag}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class {\bfseries Okrag\+Event\+Handler}
+\item 
+class {\bfseries Okrag\+Scroll\+Handler}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_okrag_a1daab62a5e72fb45c8e02c31125b1fe1}{Okrag}} (double x, double y, double r)
+\item 
+boolean \mbox{\hyperlink{class_okrag_a5cb04b5f296b9e3e28de86a721f02b99}{is\+Hit}} (double x, double y)
+\item 
+void \mbox{\hyperlink{class_okrag_a9b1e43ec7cf5542106e253c4d4929d66}{addX}} (double x)
+\item 
+void \mbox{\hyperlink{class_okrag_ac8310491f8aeb408c8438f5b08249a80}{addY}} (double y)
+\item 
+void \mbox{\hyperlink{class_okrag_a70bb4da57aa6c097581988a0e877461b}{add\+Radius}} (double r)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Klasa Koła 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_okrag_a1daab62a5e72fb45c8e02c31125b1fe1}\label{class_okrag_a1daab62a5e72fb45c8e02c31125b1fe1}} 
+\index{Okrag@{Okrag}!Okrag@{Okrag}}
+\index{Okrag@{Okrag}!Okrag@{Okrag}}
+\doxysubsubsection{\texorpdfstring{Okrag()}{Okrag()}}
+{\footnotesize\ttfamily Okrag.\+Okrag (\begin{DoxyParamCaption}\item[{double}]{x,  }\item[{double}]{y,  }\item[{double}]{r }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Konstuktor koła 
+\begin{DoxyParams}{Parameters}
+{\em x} & -\/ pozycja x środka koła \\
+\hline
+{\em y} & -\/ pozycja y środka koła \\
+\hline
+{\em r} & -\/ promień koła \\
+\hline
+\end{DoxyParams}
+Ustawianie koloru figury wybranego z palety colorpickera
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_okrag_a70bb4da57aa6c097581988a0e877461b}\label{class_okrag_a70bb4da57aa6c097581988a0e877461b}} 
+\index{Okrag@{Okrag}!addRadius@{addRadius}}
+\index{addRadius@{addRadius}!Okrag@{Okrag}}
+\doxysubsubsection{\texorpdfstring{addRadius()}{addRadius()}}
+{\footnotesize\ttfamily void Okrag.\+add\+Radius (\begin{DoxyParamCaption}\item[{double}]{r }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Zmiana promienia koła 
+\begin{DoxyParams}{Parameters}
+{\em r} & -\/ wartość o którą zmieniamy promień okręgu \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_okrag_a9b1e43ec7cf5542106e253c4d4929d66}\label{class_okrag_a9b1e43ec7cf5542106e253c4d4929d66}} 
+\index{Okrag@{Okrag}!addX@{addX}}
+\index{addX@{addX}!Okrag@{Okrag}}
+\doxysubsubsection{\texorpdfstring{addX()}{addX()}}
+{\footnotesize\ttfamily void Okrag.\+addX (\begin{DoxyParamCaption}\item[{double}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Zmiana wspolrzednej x koła 
+\begin{DoxyParams}{Parameters}
+{\em x} & -\/ wartość o którą przesuwamy pozycję x środka koła \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_okrag_ac8310491f8aeb408c8438f5b08249a80}\label{class_okrag_ac8310491f8aeb408c8438f5b08249a80}} 
+\index{Okrag@{Okrag}!addY@{addY}}
+\index{addY@{addY}!Okrag@{Okrag}}
+\doxysubsubsection{\texorpdfstring{addY()}{addY()}}
+{\footnotesize\ttfamily void Okrag.\+addY (\begin{DoxyParamCaption}\item[{double}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Zmiana wspolrzednej y koła 
+\begin{DoxyParams}{Parameters}
+{\em y} & -\/ wartość o którą przesuwamy pozycję y środka koła \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_okrag_a5cb04b5f296b9e3e28de86a721f02b99}\label{class_okrag_a5cb04b5f296b9e3e28de86a721f02b99}} 
+\index{Okrag@{Okrag}!isHit@{isHit}}
+\index{isHit@{isHit}!Okrag@{Okrag}}
+\doxysubsubsection{\texorpdfstring{isHit()}{isHit()}}
+{\footnotesize\ttfamily boolean Okrag.\+is\+Hit (\begin{DoxyParamCaption}\item[{double}]{x,  }\item[{double}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Funkcja sprawdza czy kursor najechal na figure 
+\begin{DoxyParams}{Parameters}
+{\em x} & -\/ pozycja x kursora \\
+\hline
+{\em y} & -\/ pozycja y kursora \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+-\/ zwraca prawdę lub fałsz zależnie czy x i y zawierają się w figurze 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Okrag.\+java\end{DoxyCompactItemize}

@@ -1,27 +1,37 @@
 import java.net.*;
 import java.io.*;
- 
 
+/**
+ * Creating a client and its activities handling
+ */
 public class MultiClient {
- 
+
+    /**
+     * main function of a client
+     * @param args
+     */
     public static void main(String[] args) {
 
     try  {
- 
-        Socket socket = new Socket("localhost", 4444); 
-            // Wysylanie do serwera
+        //Creating a socket for a client
+        Socket socket = new Socket("localhost", 4444);
+
+        // Input for the server
         PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
-        // Odbieranie z serwera
+
+        // Output from the server
         BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
 
+        // Creating a console for client's actions
         Console console = System.console();
+
         String text, serverOutput;;
 
         text = console.readLine("Podaj typ zmiennych wprowadzanych do drzewa: ");
         text.toLowerCase();
-
         out.println(text);
 
+        // Returned information about creating a tree or sending error
         serverOutput = in.readLine();
         System.out.println(serverOutput);
 
@@ -30,15 +40,15 @@ public class MultiClient {
             System.exit(0);
         }
 
+        // Console handling
         do {
             text = console.readLine("Enter commend: ");
             text.toLowerCase();
 
-
-            // Wysylanie do serwera
+            // Commend sent to the server
             out.println(text);
 
-            // Odbieranie z serwer
+            // Returned action made on the server
             serverOutput = in.readLine();
             System.out.println(serverOutput);
 

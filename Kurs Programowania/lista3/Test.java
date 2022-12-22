@@ -1,44 +1,168 @@
-//import java.util.*;
 
 
-public class Test{
-    public static void main (String[] args){
-
-        try {
-            int n = Integer.parseInt(args[0]);
-
-            if (n < 0) {
-                System.out.println(args[0] + " - Nieprawidlowy numer wiersza");
+public class Test {
+    public static void main (String args[]){
+        Obliczenia tab[] = new Figura[args[0].length()]; 
+        
+        char rodzajFigury;
+        int licznik = 1;
+        int rightNumberOfValues = 0;
+       
+        //Sprawdzenie poprawnej ilości danych
+        for(int i = 0; i< args[0].length(); i++){
+            try {
+                rodzajFigury = args[0].charAt(i);
+                
+                switch (rodzajFigury)
+                {
+                    case 'p':
+                        rightNumberOfValues++;
+                        break;
+                    case 'o':
+                        rightNumberOfValues++;
+                        break;
+                    case 's':
+                        rightNumberOfValues++;
+                        break;
+                    case 'c':
+                        rightNumberOfValues += 5;
+                        break;
+                    
+                    default:
+                        System.out.println(rodzajFigury + " - nieprawidlowe oznaczenie figury");
+                        System.exit(0);
+                }
+            }
+            catch(NumberFormatException ex){
+                System.out.println(args[0].charAt(i) + " - nieprawidlowe oznaczenie figury");
                 System.exit(0);
-            }
-
-            WierszTrojkataPascala wtp = new WierszTrojkataPascala(n);
-
-
-            int k;
-
-            for (int i = 1; i < args.length; i++) {
-                try {
-                    k = Integer.parseInt(args[i]);
-
-                    if ((k >= 0) && (k < n+1)) {
-                        System.out.println(k + " - " + wtp.wspolczynnik(k));
-                    } else {
-                        System.out.println(k + " - liczba spoza zakresu");
-                    }
-                }
-
-                catch(NumberFormatException ex){
-                    System.out.println(args[i] + " - Nieprawidlowa dana");
-                }
-            }
+            }  
+        }
+        
+        if( rightNumberOfValues != args.length-1 ){
+            System.out.println("Nieprawidlowa ilosc danych wejsciowych");
+            System.exit(0);
         }
 
-        catch (NumberFormatException ex){
-                System.out.println(args[0] + " - Nieprawidlowy numer wiersza");
+        for(int i = 0; i < args[0].length(); i++ ){ 
+            
+            rodzajFigury = args[0].charAt(i);
+            
+            switch (rodzajFigury) {
+                case 'o':
+                    try{    
+                        int n = Integer.parseInt(args[licznik]);
+                        Obliczenia kolo = new Kolo(n);
+                        tab[i] = kolo;
+                        
+                        
+                        licznik++;
+                        break;
+                    }
+                    catch(NumberFormatException ex){
+                        System.out.println(args[1] + " - nieprawidlowa dana");
+                        System.exit(0);
+                    }
+                case 'p':
+                    try{    
+                        int n = Integer.parseInt(args[licznik]);
+                        Obliczenia pieciokat = new Pieciokat(n);
+                        tab[i] = pieciokat;
+                        licznik++;
+                        break;
+                    }
+                    catch(NumberFormatException ex){
+                        System.out.println(args[1] + " - nieprawidlowa dana");
+                        System.exit(0);
+                    }
+                case 's':
+                    try{    
+                        int n = Integer.parseInt(args[licznik]);
+                        Obliczenia szesciokat = new Szesciokat(n);
+                        tab[i] = szesciokat;
+                        licznik++;
+                        break;
+                    }
+                    catch(NumberFormatException ex){
+                        System.out.println(args[1] + " - nieprawidlowa dana");
+                        System.exit(0);
+                    }
+                case 'c':
+                    try{    
+                        int bok1 = Integer.parseInt(args[licznik]);
+                        licznik++;
+                        int bok2 = Integer.parseInt(args[licznik]);
+                        licznik++;
+                        int bok3 = Integer.parseInt(args[licznik]);
+                        licznik++;
+                        int bok4 = Integer.parseInt(args[licznik]);
+                        licznik++;
+                        int kat = Integer.parseInt(args[licznik]);
+                        licznik++;
+
+                        if(kat > 90){
+                            System.out.println(kat + " - Zla wartosc kata dla czworokata");
+                            System.exit(0);
+                        }
+                        
+                        if(kat != 90 ){
+                            Obliczenia romb = new Romb(bok1, kat);
+                            tab[i] = romb;
+                        }
+                        
+                        else if( (bok1 != bok2) && (bok1 != bok3) && (bok1 != bok4) ){
+                            Obliczenia kwadrat = new Kwadrat(bok1);
+                            tab[i] = kwadrat;
+                        }
+                        else{
+                            Obliczenia prostokat = new Prostokat(bok1, bok2, bok3, bok4);
+                            tab[i] = prostokat;
+                        }
+                        break;
+                    }
+                    catch(NumberFormatException ex){
+                        System.out.println(args[licznik] + " - nieprawidlowa dana");
+                        System.exit(0);
+                    }
+                
+                default:
+                    System.out.println(rodzajFigury + " - nieprawidlowe oznaczenie figury");
+                    System.exit(0);
+            }
+                
+            
+        }    
+        System.out.println();
+        licznik = 1;
+
+        //wypisywanie pól i obwodów figur
+        for(int i = 0; i < args[0].length(); i++){
+            if(args[0].charAt(i) == 'o'){
+                System.out.println("Obwod kola: " + tab[i].obliczObwod() + "\nPole kola: " + tab[i].obliczPole());
+                licznik++;
+            }
+            else if(args[0].charAt(i) == 'p'){
+                System.out.println("Obwod pieciokata: " + tab[i].obliczObwod() + "\nPole pieciokata: " + tab[i].obliczPole());
+                licznik++;
+            } 
+            else if(args[0].charAt(i) == 's'){               
+                System.out.println("Obwod szesciokata: " +tab[i].obliczObwod() + "\nPole szesciokata: " + tab[i].obliczPole());
+                licznik++;
+            } 
+            else if(args[0].charAt(i) == 'c'){
+                if(Integer.parseInt(args[licznik+4]) != 90 ){
+                    System.out.println("Obwod rombu: " + tab[i].obliczObwod() + "\nPole rombu: " + tab[i].obliczPole());
+                }
+                else if( (args[licznik] == args[licznik+1]) && (args[licznik] == args[licznik+2]) && (args[licznik] == args[licznik+3] )  ){
+                    System.out.println("Obwod kwadratu: " + tab[i].obliczObwod() + "\nPole kwadratu: " + tab[i].obliczPole());
+                }
+                else{
+                    System.out.println("Obwod prostokata: " + tab[i].obliczObwod() + "\nPole prostokata: " + tab[i].obliczPole());
+                }
+                licznik = licznik + 5;
+            } 
+            System.out.println();
         }
     }
+    
 }
-
-// Najwiekszy numer wiersza to taki w którym najwiekszy wspolczynnik ze wzoru bedzie w zakresie do 2,147,483,647
-// i bedzie to wiersz 33 gdzie wspolczynniki 16 i 17 sa rowne 1,166,803,110
